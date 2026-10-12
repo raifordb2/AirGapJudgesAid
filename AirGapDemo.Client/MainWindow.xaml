@@ -1,0 +1,83 @@
+﻿<Window x:Class="AirGapDemo.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Air Gap Demo"
+        Height="350"
+        Width="600"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Text="Server Address"
+            FontWeight="SemiBold"/>
+
+        <TextBox
+            x:Name="ServerAddressTextBox"
+            Grid.Row="1"
+            Margin="0,5,0,15"
+            Padding="8"
+            Text="http://192.168.50.10:5000"/>
+
+        <StackPanel
+            Grid.Row="2"
+            Orientation="Horizontal"
+            Margin="0,0,0,15">
+
+            <Button
+                Width="120"
+                Height="35"
+                Margin="0,0,10,0"
+                Content="Test Server"
+                Click="TestServer_Click"/>
+
+            <TextBlock
+                x:Name="ConnectionStatusText"
+                VerticalAlignment="Center"
+                FontWeight="SemiBold"
+                Text="Not connected"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+
+            <TextBlock
+                Text="Message"
+                FontWeight="SemiBold"/>
+
+            <TextBox
+                x:Name="MessageTextBox"
+                Margin="0,5,0,10"
+                Padding="8"
+                Text="Hello from WPF"/>
+
+            <Button
+                Width="120"
+                Height="35"
+                HorizontalAlignment="Left"
+                Content="Send Message"
+                Click="SendMessage_Click"/>
+
+        </StackPanel>
+
+        <TextBox
+            x:Name="ResponseTextBox"
+            Grid.Row="4"
+            Margin="0,15,0,0"
+            Padding="10"
+            IsReadOnly="True"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Auto"/>
+
+    </Grid>
+
+</Window>
+
